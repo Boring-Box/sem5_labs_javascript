@@ -1,0 +1,47 @@
+<html>
+    <head></head>
+    <body>
+        <input id='last_name' size=60>
+        <button onclick='printVolCon()'>Submit</button>
+        <div id='vowels'></div>
+        <div id='consonants'></div>
+        <script>
+            var last_name = document.getElementById('last_name').value;
+            
+            function countVowels(word){
+                let vowels_list = ['а', 'е', 'ё', 'и', 'о',
+                                   'у', 'ы', 'э', 'ю', 'я'];
+                let vowels_quantity = 0;
+                let firstletter;
+
+                for (let letter of word.toLowerCase()){
+                    if (vowels_list.indexOf(letter) != -1){
+                        vowels_quantity ++;
+                    }
+                }
+                return (vowels_quantity)
+            }
+
+            function countConsonants(word){
+                let consonants_list = ['б', 'в', 'г', 'д', 'ж', 'з',
+                                       'й', 'к', 'л', 'м', 'н', 'п',
+                                       'р', 'с', 'т', 'ф', 'х', 'ц',
+                                       'ч', 'ш', 'щ'];
+                let consonants_quantity = 0;
+
+                for (let letter of word.toLowerCase()){
+                    if(consonants_list.indexOf(letter) != -1){
+                        consonants_quantity ++;
+                    }
+                }
+                return (consonants_quantity);
+            }
+
+            function printVolCon(){
+                document.getElementById('vowels').innerHTML='vowels quantity: ' + countVowels(last_name);
+                document.getElementById('consonants').innerHTML='consonants quantity: ' + countConsonants(last_name);
+            }
+
+        </script>
+    </body>
+</html>

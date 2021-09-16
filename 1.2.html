@@ -2,19 +2,48 @@
     <head>
     </head>
     <body>
+        <div id='dumbbells'></div>
         <div id='sum'></div>
-        <div id='array'></div>
+        <div id='heviest'></div>
+        <div id='lightest'></div>
         <script>
-            var g1=1, g2=3, g3=7;
+            var g1=1, g2=7, g3=3;
             var sum = g1 + g2 + g3;
             var heviest;
             var lightest;
 
-            if (g1 > g2 || g1 > g3){
-                heviest = g1;
+            if (g1 > g2 && g1 > g3){
+                heviest = 'g1';
+                if (g2 < g3){
+                    lightest = 'g2';
+                }
+                else {
+                    lightest = 'g3';
+                }
+            }
+            else if (g2 > g1 && g2 > g3){
+                heviest = 'g2';
+                if (g1 < g3){
+                    lightest = 'g1';
+                }
+                else {
+                    lightest = 'g3';
+                }
+            }
+            else {
+                heviest = 'g3';
+                if (g1 < g2){
+                    lightest = 'g1';
+                }
+                else {
+                    lightest = 'g2';
+                }
             }
 
+            document.getElementById('dumbbells').innerHTML='g1='+g1 + '  g2='+g2 + '  g3='+g3;
             document.getElementById('sum').innerHTML='sum: ' + sum;
+            document.getElementById('heviest').innerHTML='heviest: ' + heviest;
+            document.getElementById('lightest').innerHTML='lightest: ' + lightest;
 
         </script>
     </body>

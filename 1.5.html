@@ -1,0 +1,36 @@
+<html>
+    <head></head>
+    <body>
+        <div id='numbers'></div>
+        <div id='answer'>Answer: </div><br>
+        <button onclick='difference()'>difference</button>
+        <button onclick='sum()'>sum</button>
+        <button onclick='multiplication()'>multiplication</button>
+        <button onclick='division()'>division</button>
+        <script>
+            const a = 7,
+                  b = 15;
+            
+            document.getElementById('numbers').innerHTML = 'a: ' + a + '  b: ' + b;
+            
+            function difference(){
+                document.getElementById('answer').innerHTML = "Answer: " + (a - b);
+            }
+            function sum(){
+                document.getElementById('answer').innerHTML = "Answer: " + (a + b);
+            }
+            function multiplication(){
+                document.getElementById('answer').innerHTML = "Answer: " + (a * b);
+            }
+            function division(){
+                if(b != 0){
+                    document.getElementById('answer').innerHTML = "Answer: " + (a / b);
+                }
+                else{
+                    document.getElementById('answer').innerHTML = "Answer: " + "ERROR";
+                }
+            
+            }
+        </script>
+    </body>
+</html>
