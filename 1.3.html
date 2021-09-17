@@ -3,11 +3,9 @@
     <body>
         <input id='last_name' size=60>
         <button onclick='printVolCon()'>Submit</button>
-        <div id='vowels'></div>
-        <div id='consonants'></div>
+        <div id='vowels'>Vowels quantity: </div>
+        <div id='consonants'>Consonants quantity: </div>
         <script>
-            var last_name = document.getElementById('last_name').value;
-            
             function countVowels(word){
                 let vowels_list = ['а', 'е', 'ё', 'и', 'о',
                                    'у', 'ы', 'э', 'ю', 'я'];
@@ -19,7 +17,7 @@
                         vowels_quantity ++;
                     }
                 }
-                return (vowels_quantity)
+                return vowels_quantity;
             }
 
             function countConsonants(word){
@@ -34,12 +32,13 @@
                         consonants_quantity ++;
                     }
                 }
-                return (consonants_quantity);
+                return consonants_quantity;
             }
 
             function printVolCon(){
-                document.getElementById('vowels').innerHTML='vowels quantity: ' + countVowels(last_name);
-                document.getElementById('consonants').innerHTML='consonants quantity: ' + countConsonants(last_name);
+                var last_name = document.getElementById('last_name').value;
+                document.getElementById('vowels').innerHTML='Vowels quantity: ' + countVowels(last_name);
+                document.getElementById('consonants').innerHTML='Consonants quantity: ' + countConsonants(last_name);
             }
 
         </script>
