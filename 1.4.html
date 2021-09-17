@@ -1,0 +1,23 @@
+<html>
+    <head></head>
+    <body>
+        <input id='user_input' size=20>
+        <button onclick="countSymols()">Go</button><br>
+        <div id='answer'></div>
+
+        <script>
+            function countSymols(){
+                let some_string = document.getElementById('user_input').value;
+                let symbol = some_string[4];
+                let repetitions = 0;
+
+                for (let element of some_string){
+                    if (element == symbol){
+                        repetitions ++;
+                    }
+                }
+                document.getElementById('answer').innerHTML = 'Symbol "' + symbol + '" repeats ' + repetitions + ' times.';
+            }
+        </script>
+    </body>
+</html>

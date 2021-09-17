@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <div>I [A]: <input id='amperage' size=5></div><br>
+        <div>U [V]: <input id='voltage' size=5></div><br>
+        <div id='answer'>R [Ohm]: </div><br>
+        <button onclick="find_resistance()">Find R</button>
+        
+        <script>
+            function find_resistance(){
+                let amperage = document.getElementById('amperage').value;
+                let voltage = document.getElementById('voltage').value;
+
+                document.getElementById('answer').innerHTML = "R [Ohm]: " + (voltage / amperage);
+            }
+        </script>
+
+    </body>
+</html>
