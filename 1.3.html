@@ -5,6 +5,7 @@
         <button onclick='printVolCon()'>Submit</button>
         <div id='vowels'>Vowels quantity: </div>
         <div id='consonants'>Consonants quantity: </div>
+        
         <script>
             function countVowels(word){
                 let vowels_list = ['а', 'е', 'ё', 'и', 'о',
@@ -36,7 +37,7 @@
             }
 
             function printVolCon(){
-                var last_name = document.getElementById('last_name').value;
+                let last_name = document.getElementById('last_name').value;
                 document.getElementById('vowels').innerHTML='Vowels quantity: ' + countVowels(last_name);
                 document.getElementById('consonants').innerHTML='Consonants quantity: ' + countConsonants(last_name);
             }
