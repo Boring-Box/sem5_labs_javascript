@@ -1,0 +1,36 @@
+<html>
+    <head></head>
+    <body>
+        <div>Connection type: <button id='button' onclick='changeConnection()'>Serial</button></div><br>
+        
+        <div>R1 [Ohm]: <input id='r1' size=5></div><br>
+        <div>R2 [Ohm]: <input id='r2' size=5></div><br>
+
+        <div id='answer'>Answer [Ohm]: </div><br>
+        <div><button onclick='calculateResistance()'>Calculate</button></div>
+
+        <script>
+            function changeConnection() {
+                let connection_type = document.getElementById('button').textContent;
+                if (connection_type == 'Serial'){
+                    document.getElementById('button').innerHTML = 'Parallel';
+                }
+                else if (connection_type == 'Parallel') {
+                    document.getElementById('button').innerHTML = 'Serial';
+                }
+            }
+
+            function calculateResistance() {
+                let connection_type = document.getElementById('button').textContent;
+                let r1 = Number(document.getElementById('r1').value);
+                let r2 = Number(document.getElementById('r2').value);
+                if (connection_type == 'Serial'){
+                    document.getElementById('answer').innerHTML = "Answer [Ohm]: " + (r1 + r2);
+                }
+                else if (connection_type == 'Parallel') {
+                    document.getElementById('answer').innerHTML = "Answer [Ohm]: " + 1/(1/r1 + 1/r2);
+                }
+            }
+        </script>
+    </body>
+</html>

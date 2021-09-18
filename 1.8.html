@@ -1,0 +1,29 @@
+<html>
+    <header></header>
+    <body>
+        <div>
+            <b>Input: </b><input id='UI' size=50> <button onclick='submit()'>Go</button>
+        </div>
+        <div id='new_sting'>
+            <b>Output: </b>
+        </div>
+
+        <script>
+            function submit() {
+                let input_string = document.getElementById('UI').value;
+                let input_string_array = input_string.split(' ');
+
+                for (let index in input_string_array) {
+                    if (input_string_array[index].indexOf('а') != -1){
+                        let symbol_index = input_string_array[index].indexOf('а');
+
+                        input_string_array[index] = input_string_array[index].slice(0, symbol_index + 1).replace('а', 'о');
+                    }
+                }
+                let output_string = input_string_array.join(' ');
+
+                document.getElementById('new_sting').innerHTML = "<b>Output:</b> " + output_string;
+            }
+        </script>
+    </body>
+</html>

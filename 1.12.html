@@ -1,0 +1,29 @@
+<html>
+    <header></header>
+    <body>
+        <input id='UI' size=15><button onclick="submit()">Submit</button><br>
+        <div id='answer'></div>
+        <script>
+            function reverse(array){
+            var output = [];
+            for (var i = array.length - 1; i> -1; i--){
+                output.push(array[i]);
+            }
+
+            return output;
+            }
+            function submit(){
+                let answer = "This is NOT a palindrome."
+                let user_input = document.getElementById('UI').value;
+                
+                // console.log(user_input);
+                // console.log(reverse(user_input).join(''));
+
+                if ( user_input.toLowerCase() == (reverse(user_input).join('')).toLowerCase() ){
+                    answer = "This is a palindrome.";
+                }
+                document.getElementById('answer').innerText = answer;
+            }
+        </script>
+    </body>
+</html>

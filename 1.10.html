@@ -1,0 +1,22 @@
+<html>
+    <header></header>
+    <body>
+        <div id='answer'></div>
+        <script>
+            let answer = [];
+            for (let i=2; i<=100; i++){
+                is_simple = true;
+                for (let j of answer){
+                    if (i % j == 0){
+                        is_simple = false;
+                    }
+                }
+                if (is_simple == true){
+                    answer.push(i);
+                }
+            }
+            // console.log(answer);
+            document.getElementById('answer').innerText = answer.join(' ');
+        </script>
+    </body>
+</html>

@@ -8,8 +8,8 @@
         
         <script>
             function find_resistance(){
-                let amperage = document.getElementById('amperage').value;
-                let voltage = document.getElementById('voltage').value;
+                let amperage = Number(document.getElementById('amperage').value);
+                let voltage = Number(document.getElementById('voltage').value);
 
                 document.getElementById('answer').innerHTML = "R [Ohm]: " + (voltage / amperage);
             }
