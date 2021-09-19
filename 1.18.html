@@ -1,0 +1,29 @@
+<html>
+    <header></header>
+    <body>
+        <p>Amount_of_numbers: <input id='amount' size=4> <button onclick="printFib()">Print</button></p>
+        <div id='numbers'></div>
+        <script>
+            function printFib(){
+                let need = Number(document.getElementById('amount').value),
+                    fib_array = [];
+                console.log(need);
+                
+                if(need >= 2){
+                    fib_array.push(0, 1);
+                    for (let i = 0, prev1 = 1, prev2 = 0, now = 2; now != need; i++){
+                        if (i == (prev1 + prev2)){
+                            fib_array.push(i);
+                            prev2 = prev1;
+                            prev1 = i;
+                            now ++;
+                            console.log(now);
+                        }
+                    }
+                }
+                
+                document.getElementById('numbers').innerText = fib_array.join('; ');
+            }
+        </script>
+    </body>
+</html>

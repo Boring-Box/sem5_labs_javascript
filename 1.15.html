@@ -1,0 +1,15 @@
+<html>
+    <header></header>
+    <body>
+        <div id='answer'></div>
+        <script>
+            let answer = ["X:_____Y:"];
+            for(let x=0.1; x<=0.8; x+=0.05){
+                let y = 4 * Math.sin(x) - 0.5 * Math.sin(x);
+                answer.push(x.toFixed(2) + "____" + y.toFixed(2));
+            }
+            answer = answer.join('\n');
+            document.getElementById('answer').innerText = answer;
+        </script>
+    </body>
+</html>

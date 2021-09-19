@@ -1,0 +1,33 @@
+<html>
+    <header></header>
+    <body>
+        <p>Circle X: <input id='circle_x' size=5></p>
+        <p>Circle Y: <input id='circle_y' size=5></p>
+        <p>Circle R: <input id='circle_r' size=5></p>
+
+        <p>Point X: <input id='point_x' size=5></p>
+        <p>Point Y: <input id='point_y' size=5></p>
+
+        <button onclick='check_button()'>Check</button><br><br>
+        <div id='answer' >Enter coordinats and press "Check"</div>
+        <script>
+            function check_button() {
+                let answer = "Point is belong to circle.";
+                let circle_x = document.getElementById('circle_x').value,
+                    circle_y = document.getElementById('circle_y').value,
+                    circle_r = document.getElementById('circle_r').value,
+                    point_x = document.getElementById('point_x').value,
+                    point_y = document.getElementById('point_y').value;
+                
+                let traingle_x_cathetus = Math.abs(circle_x - point_x),
+                    traingle_y_cathetus = Math.abs(circle_y - point_y),
+                    traingle_hypotenuse = Math.sqrt(traingle_x_cathetus**2 + traingle_y_cathetus**2);
+
+                if (traingle_hypotenuse > circle_r){
+                    answer = "Point is NOT belong to circle."
+                }
+                document.getElementById('answer').innerText = answer;
+            }
+        </script>
+    </body>
+</html>

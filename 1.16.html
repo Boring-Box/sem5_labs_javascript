@@ -1,0 +1,20 @@
+<html>
+    <header></header>
+    <body>
+        <p>Velocity__[m/s]: <input id='velocity' size=5></p>
+        <p>Flight_time_[s]: <input id='time' size=5></p>
+        <button onclick="calculate()">Calculate</button><br><br>
+        <div id='angle'>Start_angle: </div>
+        <script>
+            function calculate(){
+                let v = Number(document.getElementById('velocity').value),
+                    t = Number(document.getElementById('time').value),
+                    angle = Math.asin((t * 9.81) / (2 * v)) * 180 / Math.PI;
+                    console.log(v);
+                    console.log(t);
+                    console.log(angle);
+                    document.getElementById('angle').innerText = "Start_angle: " + String(angle);
+            }
+        </script>
+    </body>
+</html>
