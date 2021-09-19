@@ -1,6 +1,29 @@
 <html>
     <header></header>
     <body>
-        
+        <div id='array'></div>
+        <div id='array_sum'></div>
+        <script>
+            let n = 5,
+                n_array = [],
+                n_array_sum = 0;
+
+            function getRandomIntInclusive(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            for (let i=1; i<=n; i++){
+                n_array.push(getRandomIntInclusive(0, 10));
+            }
+
+            for(let i of n_array){
+                n_array_sum += i;
+            }
+
+            document.getElementById('array').innerHTML = "Array: [" + n_array.join(', ') + "]";
+            document.getElementById('array_sum').innerHTML = "Sum of elements: " + n_array_sum;
+        </script>
     </body>
 </html>
