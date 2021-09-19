@@ -11,13 +11,10 @@
             }
             return output;
             }
-            
+
             function submit(){
                 let answer = "This is NOT a palindrome."
                 let user_input = document.getElementById('UI').value;
-                
-                // console.log(user_input);
-                // console.log(reverse(user_input).join(''));
 
                 if ( user_input.toLowerCase() == (reverse(user_input).join('')).toLowerCase() ){
                     answer = "This is a palindrome.";
