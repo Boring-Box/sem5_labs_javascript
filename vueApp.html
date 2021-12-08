@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- <link rel="stylesheet" href="styles.css" type="text/css"> -->
+  <meta charset="utf-8">
+  <title>Стоимость криптовалют</title>
+  <style>
+    .text-center {
+      color: seashell;
+      font-weight: bold;
+    }
+    #index {
+      background-color: royalblue;
+      color: seashell;
+      font-weight: bold;
+    };
+    #text-center {
+      color: slategray;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+  <body>
+    <div class="container" id="app">
+      <h2 id="text-center">Стоимость криптовалют</h2>
+      <div class="columns medium-4" v-for="(result, index) in results">
+        <div class="card">
+          <div class="card-section" >
+            <p id="index"> {{ index }} </p>
+          </div>
+          <div class="card-divider">
+            <p>$ {{ result.USD }}</p>
+          </div>
+          <div class="card-section">
+            <p> &#8364 {{ result.EUR }}</p>
+          </div>
+          <div class="card-section">
+            <p> Br {{ result.BYN }}</p>
+          </div>
+        </div>
+      </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="vueApp.js"></script>
+  </body>
+</html>

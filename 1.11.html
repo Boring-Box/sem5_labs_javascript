@@ -1,0 +1,29 @@
+<html>
+    <header></header>
+    <body>
+        <input id='UI' size=50><button onclick="analyzeTheString()">Analyze</button>
+        <script>
+            function del_symbols(string, mask_array){
+                let output = string;
+
+                console.log("Output: " + output);
+                console.log("mask_array: " + mask_array);
+
+                for (let i=0; i <= output.length; i++){
+                    for (let mask_symbol of mask_array){
+                        if (output[i] == mask_symbol){
+                            output[i] = "0";
+                            break;
+                        }
+                    }
+                }
+                return output;
+            }
+
+            function analyzeTheString(){
+                let entered_string = document.getElementById('UI').value;
+                console.log(del_symbols(entered_string, [',', ' ']));
+            }
+        </script>
+    </body>
+</html>
